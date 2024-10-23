@@ -1,0 +1,17 @@
+docker build -t simpleservice .
+docker image build -t kravikumar15/simpleservice:latest .
+
+docker run -d -p 8080:8080 --name simpleservice simpleservice:latest
+docker run -d -p 8080:8080 --name simpleservice kravikumar15/simpleservice:latest
+
+docker images
+
+docker container ls
+
+docker rm -f simpleservice
+
+docker tag sha256:4020904e1507e6847beef65b3ccd77b55bb95da2104f907239debdf3c52c2ebe  kravikumar15/simpleservice:latest
+
+docker login or docker login -u "myusername" -p "mypassword" docker.io
+
+docker push kravikumar15/simpleservice:latest
