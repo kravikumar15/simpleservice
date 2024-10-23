@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: simpleservice-route
+spec:
+  host: simpleservice.apps.sandbox-m4.g2pi.p1.openshiftapps.com
+  to:
+    kind: Service
+    name: simpleservice-service
+  port:
+    targetPort: 8080
