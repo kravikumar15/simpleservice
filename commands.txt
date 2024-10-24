@@ -15,3 +15,16 @@ docker tag sha256:4020904e1507e6847beef65b3ccd77b55bb95da2104f907239debdf3c52c2e
 docker login or docker login -u "myusername" -p "mypassword" docker.io
 
 docker push kravikumar15/simpleservice:latest
+
+oc login --token=sha256~2-pJAPCUBMhiTOOg5jMHobJLICPohYiFiwhAV7V-04Y --server=https://api.sandbox-m4.g2pi.p1.openshiftapps.com:6443
+
+curl -H "Authorization: Bearer sha256~2-pJAPCUBMhiTOOg5jMHobJLICPohYiFiwhAV7V-04Y" "https://api.sandbox-m4.g2pi.p1.openshiftapps.com:6443/apis/user.openshift.io/v1/users/~"
+
+oc project rk39624-dev
+
+
+git clone
+
+oc apply -f deployment.yaml
+oc apply -f service.yaml
+oc apply -f route.yaml

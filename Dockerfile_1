@@ -1,0 +1,8 @@
+FROM openjdk:17-jdk-alpine
+RUN apk update \
+    && apk add maven git
+EXPOSE 8080 8080
+WORKDIR "/app"
+ADD . /app
+RUN mvn clean install
+CMD ["java", "-jar", "target/simpleservice-1.0.jar"]
